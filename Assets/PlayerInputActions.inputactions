@@ -1,0 +1,146 @@
+{
+    "name": "PlayerInputActions",
+    "maps": [
+        {
+            "name": "PlayerInput",
+            "id": "2eb1cd37-940d-4247-86c8-6ddd771921ec",
+            "actions": [
+                {
+                    "name": "Sprint",
+                    "type": "Button",
+                    "id": "d900da22-b46f-44a4-9820-12dc5ad0a347",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "9d42e33f-486e-45ab-a5a7-0fa02ee588e5",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "677752ca-129c-4cd2-b8e4-9ee9e6ceabbf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "592b575d-433a-4d56-9c6c-7783634b0892",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "92461990-cce0-4f2b-919e-469a664b2f2e",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "184b2e03-6f5f-40d1-9138-0a41837d9a46",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "a4ac629a-baba-4a82-b1f4-5ed47d21a3be",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "dbbe6ce2-9c20-458f-962f-517fd4b0df6e",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "748a6157-227f-4091-ba39-0af62dddf468",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "fbb443c3-edd3-43a7-ad4e-b57f3302b01a",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "PauseMenu",
+            "id": "d3b1f04f-89c5-4408-be31-512b57814eb3",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "24a43773-f752-42ea-b740-ac840796a61a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d702db61-8227-46c6-8557-54593aef1fc0",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
