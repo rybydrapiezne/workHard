@@ -11,7 +11,7 @@ public class PlayerInteraction : MonoBehaviour
     Coroutine coroutine;
     GameObject colisionObject;
     float interactionSpeed = 1.0f;
-    
+    public bool disrupting = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         colisionObject = collision.gameObject;
@@ -31,6 +31,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (colisionObject != null)
         {
+            disrupting = false;
             if (coroutine != null)
                 StopCoroutine(coroutine);
             colisionObject.GetComponent<SliderController>().stopSlider();
@@ -45,6 +46,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (colisionObject != null)
         {
+            disrupting = false;
             colisionObject.GetComponent<SliderEnabler>().disableSlider();
             StopCoroutine(coroutine);
             colisionObject.GetComponent<SliderController>().stopSlider();
@@ -56,6 +58,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (!colisionObject.GetComponent<SliderController>().finished)
         {
+            disrupting= true;
             colisionObject.GetComponent<SliderEnabler>().enableSlider();
             coroutine = StartCoroutine(interacted(colisionObject.GetComponent<SliderController>()));
         }
