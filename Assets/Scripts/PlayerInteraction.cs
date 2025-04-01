@@ -14,16 +14,22 @@ public class PlayerInteraction : MonoBehaviour
     public bool disrupting = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        colisionObject = collision.gameObject;
-        if (collision.tag == "Interactable")
+        if (collision.gameObject.tag == "Interactable")
         {
-            interact.action.performed += timedInteraction;
-            interact.action.canceled += cancelTimedInteraction;
+            colisionObject = collision.gameObject;
+            if (collision.tag == "Interactable")
+            {
+                interact.action.performed += timedInteraction;
+                interact.action.canceled += cancelTimedInteraction;
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        cancelTimedInteractionByExiting();
+        if (collision.gameObject.tag == "Interactable")
+        {
+            cancelTimedInteractionByExiting();
+        }
 
     }
 

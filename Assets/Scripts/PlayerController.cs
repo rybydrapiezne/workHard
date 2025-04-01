@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
-{
+{    
+    public bool fired { private set; get; } = false;
+
     [SerializeField]
     float movementSpeed = 1f;
     [SerializeField]
@@ -50,6 +53,13 @@ public class PlayerController : MonoBehaviour
     public void OnSprint()
     {
 
+    }
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.tag=="Boss")
+        {
+            fired= true;
+        }
     }
     IEnumerator SliderRecovery()
     {

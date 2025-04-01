@@ -10,11 +10,18 @@ public class NPCVision : MonoBehaviour
     GameObject player;
     [SerializeField]
     GameObject canvas;
-
+    [SerializeField]
+    LayerMask layer;
+    private NPCNav npcnav;
+    private void Start()
+    {
+        npcnav = GetComponent<NPCNav>();
+    }
     private void Update()
     {
         if (isPlayerVisibleDisrupting())
         {
+            npcnav.alerted = true;
             canvas.SetActive(true);
         }
 
@@ -25,7 +32,7 @@ public class NPCVision : MonoBehaviour
         Vector2 direction = (player.transform.position - transform.position).normalized;
         float distance = Vector2.Distance(transform.position, player.transform.position);
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance,layer);
         if (hit.collider != null)
         {
             if (hit.collider.gameObject.CompareTag("Player"))

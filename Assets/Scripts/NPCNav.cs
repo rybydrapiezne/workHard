@@ -9,7 +9,10 @@ public class NPCNav : MonoBehaviour
     NavMeshAgent agent;
     [SerializeField]
     List<Transform> points;
+    [SerializeField]
+    Transform boss;
 
+    public bool alerted=false;
     private Transform actDest;
     int index = 0;
     private void Start()
@@ -21,7 +24,17 @@ public class NPCNav : MonoBehaviour
     }
     public void Update()
     {
-        if (Vector2.Distance(this.transform.position, actDest.position) < 0.5)
+        if (alerted)
+        {
+            if (Vector2.Distance(this.transform.position, boss.position) < 1)
+            {
+                agent.isStopped = true;
+                boss.GetComponent<BossNav>().onChase = true;
+            }
+            else
+                agent.SetDestination(boss.position);
+        }
+        if (Vector2.Distance(this.transform.position, actDest.position) < 0.5 && !alerted)
         {
             setNewPos();
         }
