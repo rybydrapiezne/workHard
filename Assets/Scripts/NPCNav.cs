@@ -34,18 +34,26 @@ public class NPCNav : MonoBehaviour
             else
                 agent.SetDestination(boss.position);
         }
-        if (Vector2.Distance(this.transform.position, actDest.position) < 0.5 && !alerted)
+        if (Vector2.Distance(this.transform.position, actDest.position) < 0.5 && !alerted && !agent.isStopped)
         {
-            setNewPos();
+            StartCoroutine(waiter());
         }
     }
     void setNewPos()
     {
+        agent.isStopped = false;
       index++;
       if(index>points.Count-1)
         index= 0;
       agent.SetDestination(points[index].position);
       actDest = points[index];
+    }
+    IEnumerator waiter()
+    {
+        int rnd = Random.Range(0, 15);
+        agent.isStopped = true;
+        yield return new WaitForSeconds(rnd);
+        setNewPos();
     }
 
 }
