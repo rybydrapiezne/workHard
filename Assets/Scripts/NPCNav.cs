@@ -14,6 +14,7 @@ public class NPCNav : MonoBehaviour
 
     public bool alerted=false;
     private Transform actDest;
+    private Coroutine coroutine;
     int index = 0;
     private void Start()
     {
@@ -26,17 +27,28 @@ public class NPCNav : MonoBehaviour
     {
         if (alerted)
         {
+            if (coroutine != null)
+            {
+                StopCoroutine(coroutine);
+                coroutine = null;
+                agent.isStopped = false;
+            }
             if (Vector2.Distance(this.transform.position, boss.position) < 1)
             {
                 agent.isStopped = true;
                 boss.GetComponent<BossNav>().onChase = true;
             }
             else
+            {
+
                 agent.SetDestination(boss.position);
+
+            }
+            
         }
         if (Vector2.Distance(this.transform.position, actDest.position) < 0.5 && !alerted && !agent.isStopped)
         {
-            StartCoroutine(waiter());
+            coroutine=StartCoroutine(waiter());
         }
     }
     void setNewPos()
