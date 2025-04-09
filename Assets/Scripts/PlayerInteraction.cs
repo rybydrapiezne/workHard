@@ -12,6 +12,11 @@ public class PlayerInteraction : MonoBehaviour
     GameObject colisionObject;
     float interactionSpeed = 1.0f;
     public bool disrupting = false;
+    private Animator animator;
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Interactable")
@@ -38,6 +43,7 @@ public class PlayerInteraction : MonoBehaviour
         if (colisionObject != null)
         {
             disrupting = false;
+            animator.SetBool("isDestroying", false);
             if (coroutine != null)
                 StopCoroutine(coroutine);
             colisionObject.GetComponent<SliderController>().stopSlider();
@@ -53,6 +59,7 @@ public class PlayerInteraction : MonoBehaviour
         if (colisionObject != null)
         {
             disrupting = false;
+            animator.SetBool("isDestroying", false);
             colisionObject.GetComponent<SliderEnabler>().disableSlider();
             StopCoroutine(coroutine);
             colisionObject.GetComponent<SliderController>().stopSlider();
@@ -65,6 +72,7 @@ public class PlayerInteraction : MonoBehaviour
         if (!colisionObject.GetComponent<SliderController>().finished)
         {
             disrupting= true;
+            animator.SetBool("isDestroying", true);
             colisionObject.GetComponent<SliderEnabler>().enableSlider();
             coroutine = StartCoroutine(interacted(colisionObject.GetComponent<SliderController>()));
         }

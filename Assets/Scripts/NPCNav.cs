@@ -7,21 +7,26 @@ public class NPCNav : MonoBehaviour
 {
     [SerializeField]
     NavMeshAgent agent;
-    [SerializeField]
-    List<Transform> points;
+    public List<Transform> points;
+    public Transform workStation;
     [SerializeField]
     Transform boss;
 
     public bool alerted=false;
     private Transform actDest;
     private Coroutine coroutine;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
     int index = 0;
     private void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(points[index].position);
         agent.updateRotation = false;
         actDest = points[index];
+        index++;
     }
     public void Update()
     {
@@ -51,19 +56,49 @@ public class NPCNav : MonoBehaviour
             coroutine=StartCoroutine(waiter());
         }
     }
+    private void FixedUpdate()
+    {
+        if (agent.velocity.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        if(agent.velocity.x>0)
+        {
+            spriteRenderer.flipX=false;
+        }
+        animator.SetFloat("Velocity", agent.velocity.magnitude);
+    }
     void setNewPos()
     {
         agent.isStopped = false;
-      index++;
-      if(index>points.Count-1)
-        index= 0;
-      agent.SetDestination(points[index].position);
-      actDest = points[index];
+        int rnd = Random.Range(0, 2);
+        Debug.Log("RND"+rnd);
+        if(rnd == 0)
+        {
+            Debug.Log("INDEX"+index);
+            agent.SetDestination(points[index].position);
+            actDest = points[index];
+            index++;
+            if (index > points.Count - 1)
+                index = 0;          
+            Debug.Log(index);
+
+        }
+        else
+        {
+            agent.SetDestination(workStation.position);
+            actDest = workStation;
+        }
+       
+        
+        
     }
     IEnumerator waiter()
     {
+        Debug.Log("STARTED COROUTINE");
         int rnd = Random.Range(0, 15);
         agent.isStopped = true;
+        Debug.Log("TIME" + rnd);
         yield return new WaitForSeconds(rnd);
         setNewPos();
     }

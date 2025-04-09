@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -21,8 +22,12 @@ public class PlayerController : MonoBehaviour
     private float speed=0.5f;
     private float recoverySpeed = 0.1f;
     private bool recovered = true;
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
     private void Start()
     {
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rb= GetComponent<Rigidbody2D>();
         baseSpeed=movementSpeed;
     }
@@ -32,6 +37,7 @@ public class PlayerController : MonoBehaviour
         if(sprint.action.IsPressed() && slider.value>0 && recovered)
         {
             movementSpeed = baseSpeed * 2;
+            
             slider.value -= speed*Time.deltaTime;
         }
         else
@@ -48,7 +54,17 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if(direction.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        if(direction.x>0)
+        {
+            spriteRenderer.flipX=false;
+        }
         rb.velocity=direction*movementSpeed;
+        float velocity = Math.Abs(rb.velocity.magnitude);
+        animator.SetFloat("xVelocity",velocity/(baseSpeed*2));
     }
     public void OnSprint()
     {

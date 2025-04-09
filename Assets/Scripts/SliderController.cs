@@ -7,7 +7,14 @@ public class SliderController : MonoBehaviour
 {
     [SerializeField]
     Slider slider;
+    private Animator animator;
+    private AudioSource audioSource;
     public bool finished= false;
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
+    }
     public bool increaseSlider(float value)
     {
         slider.value += value;
@@ -20,6 +27,7 @@ public class SliderController : MonoBehaviour
     public void finalizeInteraction()
     {
         finished = true;
-        this.GetComponent<SpriteRenderer>().color = Color.red;
+        animator.SetBool("Destroyed", true);
+        audioSource.Play();
     }
 }

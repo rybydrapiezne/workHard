@@ -30,22 +30,25 @@ public class NPCVision : MonoBehaviour
     private bool isPlayerVisibleDisrupting()
     {
         Vector2 direction = (player.transform.position - transform.position).normalized;
-        float distance = Vector2.Distance(transform.position, player.transform.position);
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance,layer);
+        
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, visionDistance);
         if (hit.collider != null)
         {
             if (hit.collider.gameObject.CompareTag("Player"))
             {
-                if(hit.collider.TryGetComponent(out PlayerInteraction playerinteraction))
+                if (hit.collider.TryGetComponent(out PlayerInteraction playerinteraction))
                 {
-                    if(playerinteraction.disrupting==true)
+                    if (playerinteraction.disrupting == true)
                     {
                         return true;
                     }
                     else
                     { return false; }
                 }
+            }
+            else
+            {
+                Debug.Log("NotPlayer:");
             }
         }
         return false;
