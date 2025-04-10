@@ -48,7 +48,7 @@ public class NPCVision : MonoBehaviour
             }
             else
             {
-                Debug.Log("NotPlayer:");
+                //Debug.Log("NotPlayer:");
             }
         }
         return false;
