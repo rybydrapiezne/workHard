@@ -13,6 +13,7 @@ public class SliderController : MonoBehaviour
     public static event Action<SliderController> OnSliderValueChanged;
     public bool finished= false;
     public GameObject? assignedNpc;
+
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
