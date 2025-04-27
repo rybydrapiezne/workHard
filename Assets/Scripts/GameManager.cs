@@ -24,6 +24,17 @@ public class GameManager : MonoBehaviour
     TMP_Text numberOfWorkers;
     [SerializeField]
     TMP_Text firedWorkers;
+
+    private int numberOfFiredWorkers;
+
+    private void OnEnable()
+    {
+        SliderController.OnSliderValueChanged += HandleDestroyOfInteractable;
+    }
+    private void OnDisable()
+    {
+        SliderController.OnSliderValueChanged -= HandleDestroyOfInteractable;
+    }
     private void Awake()
     {
         numberOfWorkers.text = npcs.Count.ToString();
@@ -36,6 +47,7 @@ public class GameManager : MonoBehaviour
             currNpc.points.Add(Kitchen);
             currNpc.points.Add(Toilet);
             currNpc.points.Add(bossRoom);
+            desk.GetComponentInParent<SliderController>().assignedNpc = npc;
             index++;
             if (index>workStations.Count-1)
             {
@@ -51,6 +63,18 @@ public class GameManager : MonoBehaviour
             if (playerController.fired)
             {
                 SceneManager.LoadScene(1);
+            }
+        }
+    }
+    private void HandleDestroyOfInteractable(SliderController sliderController)
+    {
+        if(sliderController.finished==true)
+        {
+            if (sliderController.assignedNpc != null)
+            {
+                boss.GetComponent<BossNav>().workersToFire.Add(sliderController.assignedNpc.transform);
+                numberOfFiredWorkers++;
+                firedWorkers.text = numberOfFiredWorkers.ToString();
             }
         }
     }

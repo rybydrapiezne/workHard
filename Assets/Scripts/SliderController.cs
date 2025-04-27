@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,9 @@ public class SliderController : MonoBehaviour
     Slider slider;
     private Animator animator;
     private AudioSource audioSource;
+    public static event Action<SliderController> OnSliderValueChanged;
     public bool finished= false;
+    public GameObject? assignedNpc;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -27,6 +30,7 @@ public class SliderController : MonoBehaviour
     public void finalizeInteraction()
     {
         finished = true;
+        OnSliderValueChanged?.Invoke(this);
         animator.SetBool("Destroyed", true);
         audioSource.Play();
     }

@@ -13,7 +13,7 @@ public class NPCNav : MonoBehaviour
     Transform boss;
 
     public bool alerted=false;
-    private Vector2 actDest;
+    private Transform actDest;
     private Coroutine coroutine;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -23,8 +23,10 @@ public class NPCNav : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        agent.SetDestination(points[index].position);
         agent.updateRotation = false;
-        setNewPos();
+        actDest = points[index];
+        index++;
     }
     public void Update()
     {
@@ -49,7 +51,7 @@ public class NPCNav : MonoBehaviour
             }
             
         }
-        if (Vector2.Distance(this.transform.position, actDest) < 0.5 && !alerted && !agent.isStopped)
+        if (Vector2.Distance(this.transform.position, actDest.position) < 0.5 && !alerted && !agent.isStopped)
         {
             coroutine=StartCoroutine(waiter());
         }
@@ -73,12 +75,9 @@ public class NPCNav : MonoBehaviour
         Debug.Log("RND"+rnd);
         if(rnd == 0)
         {
-            float offsetx = Random.Range(0f, 1.5f);
-            float offsety = Random.Range(0f, 1.5f);
-            Vector2 destPos = new Vector2(points[index].position.x + offsetx, points[index].position.y + offsety);
-            Debug.Log(destPos);
-            agent.SetDestination(destPos);
-            actDest = destPos;
+            Debug.Log("INDEX"+index);
+            agent.SetDestination(points[index].position);
+            actDest = points[index];
             index++;
             if (index > points.Count - 1)
                 index = 0;          
@@ -88,7 +87,7 @@ public class NPCNav : MonoBehaviour
         else
         {
             agent.SetDestination(workStation.position);
-            actDest = workStation.position;
+            actDest = workStation;
         }
        
         
