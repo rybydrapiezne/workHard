@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         {
             if (playerController.fired)
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(2);
             }
         }
     }
