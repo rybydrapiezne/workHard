@@ -23,10 +23,8 @@ public class NPCNav : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        agent.SetDestination(points[index].position);
         agent.updateRotation = false;
-        actDest = points[index];
-        index++;
+        setNewPos();
     }
     public void Update()
     {

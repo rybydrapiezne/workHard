@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SliderController : MonoBehaviour
+public class SliderControllerAllObjects : MonoBehaviour
 {
     [SerializeField]
     Slider slider;
+    
     public Constants.Type type;
     private Animator animator;
     private AudioSource audioSource;
-    public static event Action<SliderController> OnSliderValueChanged;
+    public static event Action<SliderControllerAllObjects> OnSliderValueChanged;
     public bool finished= false;
-    public GameObject? assignedNpc;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();

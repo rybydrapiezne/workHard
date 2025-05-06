@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,7 +24,18 @@ public class BossNav : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        NPCSystem.onWorkMeterDepleted += addToList;
     }
+    private void OnDestroy()
+    {
+        NPCSystem.onWorkMeterDepleted -= addToList;
+    }
+
+    private void addToList(NPCSystem system)
+    {
+        workersToFire.Add(system.gameObject.transform);
+    }
+
     private void FixedUpdate()
     {
         if (agent.velocity.x < 0)
@@ -44,6 +56,7 @@ public class BossNav : MonoBehaviour
             {
                 StopCoroutine(coroutine);
             }
+            this.GetComponent<BoxCollider2D>().enabled = true;
             agent.SetDestination(player.position);
         }
         else

@@ -27,14 +27,7 @@ public class GameManager : MonoBehaviour
 
     private int numberOfFiredWorkers;
 
-    private void OnEnable()
-    {
-        SliderController.OnSliderValueChanged += HandleDestroyOfInteractable;
-    }
-    private void OnDisable()
-    {
-        SliderController.OnSliderValueChanged -= HandleDestroyOfInteractable;
-    }
+
     private void Awake()
     {
         numberOfWorkers.text = npcs.Count.ToString();
@@ -66,16 +59,5 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    private void HandleDestroyOfInteractable(SliderController sliderController)
-    {
-        if(sliderController.finished==true)
-        {
-            if (sliderController.assignedNpc != null)
-            {
-                boss.GetComponent<BossNav>().workersToFire.Add(sliderController.assignedNpc.transform);
-                numberOfFiredWorkers++;
-                firedWorkers.text = numberOfFiredWorkers.ToString();
-            }
-        }
-    }
+  
 }

@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 1624809121136211531}
   - component: {fileID: 1623423270626711841}
   - component: {fileID: 8101338986084703626}
-  - component: {fileID: 4377948410548144522}
+  - component: {fileID: 8674378398003640885}
   - component: {fileID: 5954434024764229537}
   - component: {fileID: 2640476457947115358}
   - component: {fileID: 65938457599652446}
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 342220642734428874}
---- !u!114 &4377948410548144522
+--- !u!114 &8674378398003640885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -515,6 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 8230556578927951085}
+  type: 3
   finished: 0
   assignedNpc: {fileID: 0}
 --- !u!61 &5954434024764229537
