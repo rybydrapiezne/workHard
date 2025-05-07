@@ -2,5 +2,5 @@
 
 public class Constants
 {
-    public enum Type { work,kitchen,temperature,all}
+    public enum Type { work,kitchen,temperature,all,workStation}
 }

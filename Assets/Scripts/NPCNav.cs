@@ -7,16 +7,18 @@ public class NPCNav : MonoBehaviour
 {
     [SerializeField]
     NavMeshAgent agent;
+    [SerializeField]
+    float radius = 2f;
     public List<Transform> points;
     public Transform workStation;
-    [SerializeField]
-    Transform boss;
+    public Transform boss;
 
     public bool alerted=false;
-    private Transform actDest;
+    private Vector2 actDest;
     private Coroutine coroutine;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    int workTime = 0;
     int index = 0;
     private void Start()
     {
@@ -49,7 +51,7 @@ public class NPCNav : MonoBehaviour
             }
             
         }
-        if (Vector2.Distance(this.transform.position, actDest.position) < 0.5 && !alerted && !agent.isStopped)
+        if (Vector2.Distance(this.transform.position, actDest) < 0.5 && !alerted && !agent.isStopped)
         {
             coroutine=StartCoroutine(waiter());
         }
@@ -69,13 +71,22 @@ public class NPCNav : MonoBehaviour
     void setNewPos()
     {
         agent.isStopped = false;
-        int rnd = Random.Range(0, 2);
+        if(workTime>5)
+        {
+            workTime = 5;
+        }
+        int rnd = Random.Range(0, 5-workTime);
         Debug.Log("RND"+rnd);
         if(rnd == 0)
         {
             Debug.Log("INDEX"+index);
-            agent.SetDestination(points[index].position);
-            actDest = points[index];
+            workTime = 0;
+            Vector2 randomCircle = Random.insideUnitCircle * radius;
+            Vector2 randomOffset = new Vector2(randomCircle.x, randomCircle.y);
+            Vector2 destPoint = new Vector2(points[index].position.x, points[index].position.y) + randomOffset;
+            agent.SetDestination(destPoint);
+
+            actDest = destPoint;
             index++;
             if (index > points.Count - 1)
                 index = 0;          
@@ -85,7 +96,8 @@ public class NPCNav : MonoBehaviour
         else
         {
             agent.SetDestination(workStation.position);
-            actDest = workStation;
+            workTime++;
+            actDest = new Vector2(workStation.transform.position.x,workStation.transform.position.y);
         }
        
         
@@ -94,7 +106,7 @@ public class NPCNav : MonoBehaviour
     IEnumerator waiter()
     {
         Debug.Log("STARTED COROUTINE");
-        int rnd = Random.Range(0, 15);
+        int rnd = Random.Range(0, 25);
         agent.isStopped = true;
         Debug.Log("TIME" + rnd);
         yield return new WaitForSeconds(rnd);

@@ -19,6 +19,7 @@ public class BossNav : MonoBehaviour
     private bool firing = false;
     Transform currWorker;
     Coroutine coroutine;
+    public static Action<BossNav> onWorkerFired;
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -90,6 +91,7 @@ public class BossNav : MonoBehaviour
             agent.isStopped = true;
             yield return new WaitForSeconds(1f);
 
+            onWorkerFired?.Invoke(this);
             Destroy(currWorker.gameObject);
             workersToFire.RemoveAt(0);
 

@@ -2,17 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NPCSystem : MonoBehaviour
 {
+    public Constants.Type affectedType;
+    public float workMeter;
+    public float workDecreaser;
+    public float workStationDecreaser;
+    public float kitchenDecreaser;
+    public float temperatureDecreaser;
+    public float allDecreaser;
     [SerializeField]
-    Constants.Type affectedType;
+    float speed=15f;
     [SerializeField]
-    float workMeter;
+    GameObject WorkMeterCanvas;
     [SerializeField]
-    float workDecreaser;
-    [SerializeField]
-    float workStationDecreaser;
+    Slider slider;
 
     public static Action<NPCSystem> onWorkMeterDepleted;
 
@@ -32,21 +38,47 @@ public class NPCSystem : MonoBehaviour
         Constants.Type type = slider.type;
         if (affectedType == type || type == Constants.Type.all)
         {
-            workMeter -= workDecreaser;
+            switch(type)
+            {
+                case(Constants.Type.all):
+                    workMeter-=allDecreaser;
+                    break;
+                case (Constants.Type.work):
+                    workMeter-=workDecreaser;
+                    break;
+                case (Constants.Type.kitchen):
+                    workMeter-=kitchenDecreaser;
+                    break;
+                case (Constants.Type.temperature):
+                    workMeter-=temperatureDecreaser;
+                    break;
+            }
         }
 
-        else if (type == Constants.Type.work)
+        else if (type == Constants.Type.workStation)
         {
             if (slider.assignedNpc == this.gameObject)
             {
                 workMeter -= workStationDecreaser;
             }
         }
-
+        StartCoroutine(depletingWorkMeter());
         if (workMeter <= 0)
         {
             onWorkMeterDepleted.Invoke(this);
         }
 
+    }
+    IEnumerator depletingWorkMeter()
+    {
+        WorkMeterCanvas.SetActive(true);
+
+        while (slider.value > workMeter)
+        {
+            slider.value = Mathf.MoveTowards(slider.value, workMeter, Time.deltaTime*20);
+            yield return null;
+        }
+
+        WorkMeterCanvas.SetActive(false);
     }
 }

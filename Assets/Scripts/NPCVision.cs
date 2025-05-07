@@ -6,8 +6,7 @@ public class NPCVision : MonoBehaviour
 {
     public float visionDistance = 1f;
 
-    [SerializeField]
-    GameObject player;
+    public GameObject player;
     [SerializeField]
     GameObject canvas;
     [SerializeField]

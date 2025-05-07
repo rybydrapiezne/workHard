@@ -61,7 +61,8 @@ public class PlayerInteraction : MonoBehaviour
             disrupting = false;
             animator.SetBool("isDestroying", false);
             colisionObject.GetComponent<SliderEnabler>().disableSlider();
-            StopCoroutine(coroutine);
+            if (coroutine != null)
+                StopCoroutine(coroutine);
             colisionObject.GetComponent<SliderController>().stopSlider();
         }
 
