@@ -19,7 +19,7 @@ public class NPCSystem : MonoBehaviour
     GameObject WorkMeterCanvas;
     [SerializeField]
     Slider slider;
-
+    bool invoked = false;
     public static Action<NPCSystem> onWorkMeterDepleted;
 
     private void Start()
@@ -63,9 +63,10 @@ public class NPCSystem : MonoBehaviour
             }
         }
         StartCoroutine(depletingWorkMeter());
-        if (workMeter <= 0)
+        if (workMeter <= 0 && !invoked)
         {
             onWorkMeterDepleted.Invoke(this);
+            invoked = true;
         }
 
     }

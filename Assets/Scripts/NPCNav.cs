@@ -81,9 +81,10 @@ public class NPCNav : MonoBehaviour
         {
             Debug.Log("INDEX"+index);
             workTime = 0;
+            int randomPoint = Random.Range(0, points.Count);
             Vector2 randomCircle = Random.insideUnitCircle * radius;
             Vector2 randomOffset = new Vector2(randomCircle.x, randomCircle.y);
-            Vector2 destPoint = new Vector2(points[index].position.x, points[index].position.y) + randomOffset;
+            Vector2 destPoint = new Vector2(points[randomPoint].position.x, points[randomPoint].position.y) + randomOffset;
             agent.SetDestination(destPoint);
 
             actDest = destPoint;
