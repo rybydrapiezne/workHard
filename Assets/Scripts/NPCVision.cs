@@ -15,6 +15,7 @@ public class NPCVision : MonoBehaviour
     private void Start()
     {
         npcnav = GetComponent<NPCNav>();
+        UpgradeChoice.onOption1Selected += decreaseVisionDistance;
     }
     private void Update()
     {
@@ -25,7 +26,10 @@ public class NPCVision : MonoBehaviour
         }
 
     }
-
+    private void decreaseVisionDistance(UpgradeChoice choice)
+    {
+        visionDistance -= choice.visionDecrease;
+    }
     private bool isPlayerVisibleDisrupting()
     {
         Vector2 direction = (player.transform.position - transform.position).normalized;

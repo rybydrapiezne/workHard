@@ -480,6 +480,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1239567850}
+  firedWorkers: {fileID: 1174689216}
+  amoutOfWorkers: {fileID: 771018588}
 --- !u!4 &174646092
 Transform:
   m_ObjectHideFlags: 0
@@ -531,14 +533,20 @@ MonoBehaviour:
   - {fileID: 687586211}
   - {fileID: 843983928}
   - {fileID: 366664898}
-  Kitchen: {fileID: 938979879}
-  Toilet: {fileID: 918310706}
-  bossRoom: {fileID: 1404691714}
+  points:
+  - {fileID: 938979879}
+  - {fileID: 918310706}
+  - {fileID: 1404691714}
   amoutOfNPC: 6
   player: {fileID: 1239567850}
   boss: {fileID: 34557922}
   numberOfWorkers: {fileID: 771018588}
-  firedWorkers: {fileID: 1174689216}
+  workMeter: 100
+  workDecreaser: 0
+  workStationDecreaser: 50
+  kitchenDecreaser: 0
+  temperatureDecreaser: 0
+  allDecreaser: 25
 --- !u!1 &199732911
 GameObject:
   m_ObjectHideFlags: 0

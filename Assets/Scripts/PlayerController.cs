@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 direction;
     private float baseSpeed;
-    private float speed=0.5f;
+    public float sliderDecreaseSpeed=0.5f;
     private float recoverySpeed = 0.1f;
     private bool recovered = true;
     private SpriteRenderer spriteRenderer;
@@ -30,7 +30,14 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb= GetComponent<Rigidbody2D>();
         baseSpeed=movementSpeed;
+        UpgradeChoice.onOption3Selected += decreaseSliderDecreaseSpeed;
     }
+
+    private void decreaseSliderDecreaseSpeed(UpgradeChoice choice)
+    {
+        sliderDecreaseSpeed -= choice.sliderDecreaseSpeedDecreaser;
+    }
+
     private void Update()
     {
         direction= movement.action.ReadValue<Vector2>();
@@ -38,7 +45,7 @@ public class PlayerController : MonoBehaviour
         {
             movementSpeed = baseSpeed * 2;
             
-            slider.value -= speed*Time.deltaTime;
+            slider.value -= sliderDecreaseSpeed*Time.deltaTime;
         }
         else
         {
