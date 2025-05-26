@@ -8,9 +8,10 @@ public class TypeWriterEffect : MonoBehaviour
     [SerializeField]
     string inputText;
     TMP_Text textfield;
-    private int textIndex=0;
-    private WaitForSeconds _delay;
-    private WaitForSeconds _interpunctuationDelay;
+    public bool finished = false;
+    private int textIndex = 0;
+    private WaitForSecondsRealtime _delay;
+    private WaitForSecondsRealtime _interpunctuationDelay;
     Coroutine typewriterCoroutine;
 
     [SerializeField]
@@ -20,9 +21,10 @@ public class TypeWriterEffect : MonoBehaviour
 
     private void Start()
     {
+
         textfield = GetComponent<TMP_Text>();
-        _delay=new WaitForSeconds(1/charactersPerSecond);
-        _interpunctuationDelay = new WaitForSeconds(interpunctuationDelay);
+        _delay = new WaitForSecondsRealtime(1 / charactersPerSecond);
+        _interpunctuationDelay = new WaitForSecondsRealtime(interpunctuationDelay);
         setText(inputText);
     }
     IEnumerator write()
@@ -46,11 +48,12 @@ public class TypeWriterEffect : MonoBehaviour
 
             textIndex++;
         }
+        finished = true;
     }
 
     private void setText(string text)
     {
-        if(typewriterCoroutine != null)
+        if (typewriterCoroutine != null)
         {
             StopCoroutine(typewriterCoroutine);
         }
@@ -58,7 +61,15 @@ public class TypeWriterEffect : MonoBehaviour
         textfield.ForceMeshUpdate();
         textfield.maxVisibleCharacters = 0;
         textIndex = 0;
-        typewriterCoroutine=StartCoroutine(write());
+        typewriterCoroutine = StartCoroutine(write());
 
+    }
+
+    public void forceEnd()
+    {
+        textfield.maxVisibleCharacters = 1000;
+        textfield.ForceMeshUpdate();
+        StopCoroutine(typewriterCoroutine);
+        finished = true;
     }
 }

@@ -64,7 +64,7 @@ public class BossNav : MonoBehaviour
         {
             if (workersToFire.Count != 0)
             {
-                if (!firing)
+                if(!firing)
                     coroutine=StartCoroutine(firingProcess());
             }
             else
@@ -78,26 +78,31 @@ public class BossNav : MonoBehaviour
     private IEnumerator firingProcess()
     {
         firing = true;
+        Debug.Log("Firing process started");
 
         while (workersToFire.Count > 0)
         {
             currWorker = workersToFire[0];
+            Debug.Log("Firing " + currWorker.name);
 
             while (Vector2.Distance(transform.position, currWorker.position) > 0.5f)
             {
+                Debug.Log("Moving towards " + currWorker.name);
                 agent.SetDestination(currWorker.position);
                 yield return null;
             }
+            Debug.Log("Reached " + currWorker.name);
             agent.isStopped = true;
             yield return new WaitForSeconds(1f);
 
             onWorkerFired?.Invoke(this);
             Destroy(currWorker.gameObject);
+            Debug.Log("Fired " + currWorker.name);
             workersToFire.RemoveAt(0);
-
+            Debug.Log("Remaining workers to fire: " + workersToFire.Count);
             agent.isStopped = false;
         }
-
+        Debug.Log("Firing process completed");
         firing = false;
     }
 }

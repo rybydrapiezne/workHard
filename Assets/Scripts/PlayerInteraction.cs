@@ -10,20 +10,13 @@ public class PlayerInteraction : MonoBehaviour
     InputActionReference interact;
     Coroutine coroutine;
     GameObject colisionObject;
-    public float interactionSpeed = 1.0f;
+    float interactionSpeed = 1.0f;
     public bool disrupting = false;
     private Animator animator;
     private void Start()
     {
         animator = GetComponent<Animator>();
-        UpgradeChoice.onOption2Selected += increaseInteractionSpeed;
     }
-
-    private void increaseInteractionSpeed(UpgradeChoice choice)
-    {
-        interactionSpeed += choice.destroyingSpeedIncrease;
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Interactable")

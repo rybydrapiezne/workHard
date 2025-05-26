@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     TMP_Text firedWorkers;
     [SerializeField]
-    TMP_Text amoutOfWorkers;
+    int numberOfWorkers = 5;
     int firedWorkersCount=0;  
     private void Start()
     {
@@ -22,38 +22,22 @@ public class GameManager : MonoBehaviour
     private void updateUI(BossNav bossNav)
     {
         firedWorkersCount++;
-        int x=0;
-        Int32.TryParse(amoutOfWorkers.text, out x);
         firedWorkers.text=firedWorkersCount.ToString();
-        if (firedWorkersCount == x)
-        {
-            nextScene();
-        }
     }
 
     private void Update()
     {
-        if(player.TryGetComponent(out PlayerController playerController))
+        if (player.TryGetComponent(out PlayerController playerController))
         {
             if (playerController.fired)
             {
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(3);
             }
         }
-    }
-    private void nextScene()
-    {
-        StartCoroutine(LoadAsyncScene(SceneManager.GetActiveScene().buildIndex+1));
-    }
-    IEnumerator LoadAsyncScene(int sceneId)
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
-
-        while (!operation.isDone)
+        if (numberOfWorkers == firedWorkersCount)
         {
-            yield return null;
-
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
-
+  
 }

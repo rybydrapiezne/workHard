@@ -22475,7 +22475,7 @@ MonoBehaviour:
   m_OverrideTileSize: 1
   m_TileSize: 16
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_BuildHeightMesh: 0
   m_MinRegionArea: 0
   m_HideEditorLogs: 0
@@ -22997,13 +22997,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 925490626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 246d7ecddcc6c5e44b4e4f85e67f3c66, type: 3}
+  m_Script: {fileID: 11500000, guid: 88bcdfe1d9d992ac1affac0be8dd8158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   npcPrefabs:
-  - {fileID: 5469963527351333868, guid: 042b2cd89a0264b46a6c086677087813, type: 3}
-  - {fileID: 5469963527351333868, guid: a6fe843c7d02c69419ac4d76c13a6365, type: 3}
   - {fileID: 5469963527351333868, guid: 69efe9e7e9a5bd84583618cf4ce0d1c1, type: 3}
+  - {fileID: 5469963527351333868, guid: a6fe843c7d02c69419ac4d76c13a6365, type: 3}
+  - {fileID: 5469963527351333868, guid: 042b2cd89a0264b46a6c086677087813, type: 3}
   - {fileID: 5469963527351333868, guid: 3262381ce31339e41acda207d00a25a1, type: 3}
   - {fileID: 5469963527351333868, guid: 073f38dab5b62f244beeb3db49a7a4d5, type: 3}
   - {fileID: 5469963527351333868, guid: c500641722cc6464da9c85bb424cea65, type: 3}
@@ -23055,15 +23055,15 @@ MonoBehaviour:
   - {fileID: 294943283}
   - {fileID: 62036363}
   amoutOfNPC: 21
-  player: {fileID: 1691438236}
-  boss: {fileID: 2072216183}
+  player: {fileID: 0}
+  boss: {fileID: 0}
   numberOfWorkers: {fileID: 424378926}
   workMeter: 100
-  workDecreaser: 20
+  workDecreaser: 17
   workStationDecreaser: 50
-  kitchenDecreaser: 40
-  temperatureDecreaser: 20
-  allDecreaser: 10
+  kitchenDecreaser: 33
+  temperatureDecreaser: 17
+  allDecreaser: 17
 --- !u!114 &925490628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23078,7 +23078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1691438236}
   firedWorkers: {fileID: 2107122464}
-  amoutOfWorkers: {fileID: 0}
+  numberOfWorkers: 21
 --- !u!4 &925490629
 Transform:
   m_ObjectHideFlags: 0
@@ -23128,7 +23128,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 925490626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f7d6c34d19004e08a82e9939a599f6b, type: 3}
+  m_Script: {fileID: 11500000, guid: 78ccd92de311fd2409c7a8c2885be2f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   choiceCanvas: {fileID: 234284654}
@@ -26613,11 +26613,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2072216183 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8289571264088633287, guid: c41791bb75676fb4793ecae8b69446c3, type: 3}
-  m_PrefabInstance: {fileID: 1293783193}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2081604031 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6445154541428505182, guid: bf93133fbc794a54eb6e618d8a6f748a, type: 3}
