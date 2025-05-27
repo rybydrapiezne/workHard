@@ -1,32 +1,68 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
+using UnityEngine.Localization;
 
 public class TypeWriterEffect : MonoBehaviour
 {
-    [SerializeField]
-    string inputText;
-    TMP_Text textfield;
+    [SerializeField] private LocalizedString localizedString;
+    private TMP_Text textfield;
     public bool finished = false;
     private int textIndex = 0;
     private WaitForSecondsRealtime _delay;
     private WaitForSecondsRealtime _interpunctuationDelay;
-    Coroutine typewriterCoroutine;
+    private Coroutine typewriterCoroutine;
 
-    [SerializeField]
-    private float charactersPerSecond = 10;
-    [SerializeField]
-    private float interpunctuationDelay = 1 / 5;
+    [SerializeField] private float charactersPerSecond = 10;
+    [SerializeField] private float interpunctuationDelay = 0.2f;
 
-    private void Start()
+    void OnEnable()
     {
-
-        textfield = GetComponent<TMP_Text>();
-        _delay = new WaitForSecondsRealtime(1 / charactersPerSecond);
-        _interpunctuationDelay = new WaitForSecondsRealtime(interpunctuationDelay);
-        setText(inputText);
+        if (localizedString != null)
+        {
+            localizedString.StringChanged += UpdateString;
+        }
     }
+
+    void OnDisable()
+    {
+        if (localizedString != null)
+        {
+            localizedString.StringChanged -= UpdateString;
+        }
+    }
+
+    void Start()
+    {
+        textfield = GetComponent<TMP_Text>();
+        _delay = new WaitForSecondsRealtime(1f / charactersPerSecond);
+        _interpunctuationDelay = new WaitForSecondsRealtime(interpunctuationDelay);
+
+        if (localizedString != null)
+        {
+            UpdateString(localizedString.GetLocalizedString());
+        }
+    }
+
+    void UpdateString(string s)
+    {
+        setText(s);
+    }
+
+    private void setText(string text)
+    {
+        if (typewriterCoroutine != null)
+        {
+            StopCoroutine(typewriterCoroutine);
+        }
+        textfield.text = text;
+        textfield.ForceMeshUpdate();
+        textfield.maxVisibleCharacters = 0;
+        textIndex = 0;
+        finished = false;
+        typewriterCoroutine = StartCoroutine(write());
+    }
+
     IEnumerator write()
     {
         TMP_TextInfo info = textfield.textInfo;
@@ -51,25 +87,14 @@ public class TypeWriterEffect : MonoBehaviour
         finished = true;
     }
 
-    private void setText(string text)
+    public void forceEnd()
     {
         if (typewriterCoroutine != null)
         {
             StopCoroutine(typewriterCoroutine);
         }
-        textfield.text = text;
+        textfield.maxVisibleCharacters = textfield.textInfo.characterCount; // Use characterCount instead of hardcoding 1000
         textfield.ForceMeshUpdate();
-        textfield.maxVisibleCharacters = 0;
-        textIndex = 0;
-        typewriterCoroutine = StartCoroutine(write());
-
-    }
-
-    public void forceEnd()
-    {
-        textfield.maxVisibleCharacters = 1000;
-        textfield.ForceMeshUpdate();
-        StopCoroutine(typewriterCoroutine);
         finished = true;
     }
 }

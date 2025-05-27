@@ -24890,7 +24890,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 250ce0e4a3bf6b14d85047c24087faba, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8603ea49bb0513302b35bd149f06108f, type: 2}
   m_sharedMaterial: {fileID: 9086456374776554120, guid: 250ce0e4a3bf6b14d85047c24087faba, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -24921,7 +24921,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -24954,7 +24954,7 @@ MonoBehaviour:
   m_margin: {x: -13.464355, y: -4.488144, z: -803.60913, w: -168.30484}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &396811712
@@ -24977,11 +24977,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2586816fe3668324b83fef5b4ae7c07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputText: While destroying you can't be spotted. If anyone spots you, you will
-    be reported to boss and fired.
+  localizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:463ca0f4daac45bc589d4ccc29c63194
+    m_TableEntryReference:
+      m_KeyId: 11892087992320
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   finished: 0
   charactersPerSecond: 15
   interpunctuationDelay: 0
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &398296509
 GameObject:
   m_ObjectHideFlags: 0
@@ -25042,7 +25052,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 250ce0e4a3bf6b14d85047c24087faba, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8603ea49bb0513302b35bd149f06108f, type: 2}
   m_sharedMaterial: {fileID: 9086456374776554120, guid: 250ce0e4a3bf6b14d85047c24087faba, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -25073,7 +25083,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -25106,7 +25116,7 @@ MonoBehaviour:
   m_margin: {x: -13.464355, y: -4.488144, z: -803.60913, w: -168.30484}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &398296512
@@ -25129,10 +25139,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2586816fe3668324b83fef5b4ae7c07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputText: Good luck!!
+  localizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:463ca0f4daac45bc589d4ccc29c63194
+    m_TableEntryReference:
+      m_KeyId: 12079082647552
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   finished: 0
   charactersPerSecond: 15
   interpunctuationDelay: 0
+  references:
+    version: 2
+    RefIds: []
 --- !u!1001 &413954988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43959,7 +43980,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 250ce0e4a3bf6b14d85047c24087faba, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8603ea49bb0513302b35bd149f06108f, type: 2}
   m_sharedMaterial: {fileID: 9086456374776554120, guid: 250ce0e4a3bf6b14d85047c24087faba, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -43990,7 +44011,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -44023,7 +44044,7 @@ MonoBehaviour:
   m_margin: {x: -13.464355, y: -4.488144, z: -803.60913, w: -168.30484}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &616638524
@@ -44046,12 +44067,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2586816fe3668324b83fef5b4ae7c07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputText: To destroy an object walk to it USING W,A,S,D buttons and PRESS AND
-    HOLD E to interact. You can use SHIFT to sprint. Watch out stamina meter over
-    your head, when it's depleated you won't be able to run until it's replenished.
+  localizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:463ca0f4daac45bc589d4ccc29c63194
+    m_TableEntryReference:
+      m_KeyId: 10803817099264
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   finished: 0
   charactersPerSecond: 15
   interpunctuationDelay: 0
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -46428,7 +46458,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 250ce0e4a3bf6b14d85047c24087faba, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8603ea49bb0513302b35bd149f06108f, type: 2}
   m_sharedMaterial: {fileID: 9086456374776554120, guid: 250ce0e4a3bf6b14d85047c24087faba, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -46459,7 +46489,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -46492,7 +46522,7 @@ MonoBehaviour:
   m_margin: {x: -13.464355, y: -4.488144, z: -803.60913, w: -168.30484}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1364540266
@@ -46515,12 +46545,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2586816fe3668324b83fef5b4ae7c07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputText: Each of your cooworkers has their likings. And each of the interactable
-    items affects different groups. To successfully fire a worker you need to destroy
-    every item of the group AND the worker's workstation.
+  localizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:463ca0f4daac45bc589d4ccc29c63194
+    m_TableEntryReference:
+      m_KeyId: 11359956643840
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   finished: 0
   charactersPerSecond: 15
   interpunctuationDelay: 0
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1379521099
 GameObject:
   m_ObjectHideFlags: 0
@@ -47173,7 +47212,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 250ce0e4a3bf6b14d85047c24087faba, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8603ea49bb0513302b35bd149f06108f, type: 2}
   m_sharedMaterial: {fileID: 9086456374776554120, guid: 250ce0e4a3bf6b14d85047c24087faba, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -47204,7 +47243,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -47237,7 +47276,7 @@ MonoBehaviour:
   m_margin: {x: -13.464355, y: -4.488144, z: -803.60913, w: -168.30484}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1596637556
@@ -47260,11 +47299,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2586816fe3668324b83fef5b4ae7c07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputText: You can distrupt their work by destroying their workstations, coffee
-    makers, printers and other office utensils.
+  localizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:463ca0f4daac45bc589d4ccc29c63194
+    m_TableEntryReference:
+      m_KeyId: 10129633062912
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   finished: 0
   charactersPerSecond: 15
   interpunctuationDelay: 0
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1649405000
 GameObject:
   m_ObjectHideFlags: 0
@@ -55472,11 +55521,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2586816fe3668324b83fef5b4ae7c07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputText: Your goal is to distrupt the work of all other workers so that they
-    get fired.
+  localizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:463ca0f4daac45bc589d4ccc29c63194
+    m_TableEntryReference:
+      m_KeyId: 6243291639808
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   finished: 0
   charactersPerSecond: 15
   interpunctuationDelay: 0
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &2118165535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55499,7 +55558,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 250ce0e4a3bf6b14d85047c24087faba, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8603ea49bb0513302b35bd149f06108f, type: 2}
   m_sharedMaterial: {fileID: 9086456374776554120, guid: 250ce0e4a3bf6b14d85047c24087faba, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -55530,7 +55589,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -55563,7 +55622,7 @@ MonoBehaviour:
   m_margin: {x: -13.464355, y: -4.488144, z: -803.60913, w: -168.30484}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2118165536

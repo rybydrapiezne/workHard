@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -71,6 +72,12 @@ public class Menu : MonoBehaviour
     {
         audioSourceOnClick.Play();
 
+    }
+    public void ChangeLanguage(string localeIdentifier)
+    {
+        audioSourceOnClick.Play();
+        var locale = LocalizationSettings.AvailableLocales.GetLocale(localeIdentifier);
+        LocalizationSettings.SelectedLocale = locale;
     }
     public void Options()
     {

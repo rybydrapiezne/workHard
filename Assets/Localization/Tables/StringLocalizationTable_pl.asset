@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StringLocalizationTable_pl
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl
+  m_SharedData: {fileID: 11400000, guid: 463ca0f4daac45bc589d4ccc29c63194, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 28310384640
+    m_Localized: Nowa Gra
+    m_Metadata:
+      m_Items: []
+  - m_Id: 248452624384
+    m_Localized: Kontynuuj
+    m_Metadata:
+      m_Items: []
+  - m_Id: 303406395392
+    m_Localized: Opcje
+    m_Metadata:
+      m_Items: []
+  - m_Id: 349271109632
+    m_Localized: "Wyjd\u017A"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 495950114816
+    m_Localized: Wczytywanie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 586903597056
+    m_Localized: "Zatwierd\u017A"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 622211248128
+    m_Localized: "Powr\xF3t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 713554800640
+    m_Localized: "G\u0142\xF3wny"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 914797506560
+    m_Localized: Muzyka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 944937775104
+    m_Localized: Efekty
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6243291639808
+    m_Localized: "Twoim zadaniem jest przeszkodzi\u0107 w pracy innym pracownikom
+      tak aby zostali zwolnieni."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10129633062912
+    m_Localized: "Mo\u017Cesz przeszkodzi\u0107 im w pracy poprzez niszczenie ich
+      stanowisk pracy, drukarek oraz pozosta\u0142ych przy\u017C\u0105d\xF3w biurowych."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10803817099264
+    m_Localized: "Aby zniszczy\u0107 obiekt musisz podej\u015B\u0107 do niego u\u017Cywaj\u0105c
+      W,A,S,D oraz PRZYTRZYMA\u0106 PRZYCISK E w celu wej\u015Bcia w interakcje.
+      Mo\u017Cesz u\u017Cy\u0107 przycisku SHIFT aby biega\u0107. Uwa\u017Caj na
+      pasek wytrzyma\u0142o\u015Bci nad twoj\u0105 g\u0142ow\u0105, kiedy si\u0119
+      roz\u0142aduje nie b\u0119dziesz m\xF3g\u0142 biega\u0107 p\xF3ki si\u0119
+      nie uzupe\u0142ni."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11359956643840
+    m_Localized: "Ka\u017Cdy z twoich wsp\xF3\u0142pracownik\xF3w ma swoje upodobania
+      oraz ka\u017Cdy z przedmiot\xF3w z kt\xF3rymi mo\u017Cesz wej\u015B\u0107 w
+      interakcje dotyczy innej z grup. \u017Beby doprowadzi\u0107 do zwolnienia musisz
+      zniszczy\u0107 ka\u017Cdy obiekt dotycz\u0105cy grupy ORAZ stanowisko pracy
+      pracownika."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11892087992320
+    m_Localized: "Podczas niszczenia nie mo\u017Cesz da\u0107 si\u0119 zobaczy\u0107.
+      Je\u017Celi ktokolwiek ci\u0119 zobaczy, zostaniesz zg\u0142oszony do szefa
+      a nast\u0119pnie zwolniony."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12079082647552
+    m_Localized: Powodzenia!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12969311088640
+    m_Localized: Zmniejszenie pola widzenia NPC
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13030749253632
+    m_Localized: Szybsze niszczenie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13071358504960
+    m_Localized: "Wi\u0119cej wytrzyma\u0142o\u015Bci"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

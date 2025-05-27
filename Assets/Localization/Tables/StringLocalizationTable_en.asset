@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: StringLocalizationTable_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 463ca0f4daac45bc589d4ccc29c63194, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 28310384640
+    m_Localized: New Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 248452624384
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 303406395392
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 349271109632
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 495950114816
+    m_Localized: Loading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 586903597056
+    m_Localized: Apply
+    m_Metadata:
+      m_Items: []
+  - m_Id: 622211248128
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 713554800640
+    m_Localized: Master
+    m_Metadata:
+      m_Items: []
+  - m_Id: 914797506560
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 944937775104
+    m_Localized: Sfx
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6243291639808
+    m_Localized: Your goal is to distrupt the work of all other workers so that they
+      get fired.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10129633062912
+    m_Localized: You can distrupt their work by destroying their workstations, coffee
+      makers, printers and other office utensils.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10803817099264
+    m_Localized: To destroy an object walk to it USING W,A,S,D buttons and PRESS
+      AND HOLD E to interact. You can use SHIFT to sprint. Watch out stamina meter
+      over your head, when it's depleated you won't be able to run until it's replenished.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11359956643840
+    m_Localized: Each of your cooworkers has their likings, and each of the interactable
+      items affects different groups. To successfully fire a worker you need to destroy
+      every item of the group AND the worker's workstation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11892087992320
+    m_Localized: While destroying you can't be spotted. If anyone spots you, you
+      will be reported to boss and fired.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12079082647552
+    m_Localized: Good luck!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12969311088640
+    m_Localized: Reduce NPC vision
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13030749253632
+    m_Localized: Faster destroying
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13071358504960
+    m_Localized: More stamina
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
