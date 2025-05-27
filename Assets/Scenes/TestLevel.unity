@@ -590,7 +590,10 @@ MonoBehaviour:
   - {fileID: 938279616}
   - {fileID: 687586211}
   - {fileID: 366664898}
-  points: []
+  points:
+  - {fileID: 938979879}
+  - {fileID: 918310706}
+  - {fileID: 1404691714}
   amoutOfNPC: 5
   player: {fileID: 1239567850}
   boss: {fileID: 34557922}

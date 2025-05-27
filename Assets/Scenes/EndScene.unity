@@ -344,9 +344,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2586816fe3668324b83fef5b4ae7c07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputText: You Are Fired.
+  localizedString:
+    m_TableReference:
+      m_TableCollectionName: GUID:463ca0f4daac45bc589d4ccc29c63194
+    m_TableEntryReference:
+      m_KeyId: 91660619866112
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  finished: 0
   charactersPerSecond: 10
   interpunctuationDelay: 0.25
+  references:
+    version: 2
+    RefIds: []
 --- !u!114 &1042019935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,8 +381,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8603ea49bb0513302b35bd149f06108f, type: 2}
+  m_sharedMaterial: {fileID: 2238060233385030454, guid: 8603ea49bb0513302b35bd149f06108f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

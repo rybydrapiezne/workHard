@@ -91,6 +91,14 @@ MonoBehaviour:
     m_Key: Option3
     m_Metadata:
       m_Items: []
+  - m_Id: 91660619866112
+    m_Key: FinalTex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109468099534848
+    m_Key: FinalText
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -107,6 +107,14 @@ MonoBehaviour:
     m_Localized: "Wi\u0119cej wytrzyma\u0142o\u015Bci"
     m_Metadata:
       m_Items: []
+  - m_Id: 91660619866112
+    m_Localized: "Jeste\u015B zwolniony!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109468099534848
+    m_Localized: "Wygra\u0142e\u015B!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

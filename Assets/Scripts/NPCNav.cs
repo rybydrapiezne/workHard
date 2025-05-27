@@ -71,6 +71,12 @@ public class NPCNav : MonoBehaviour
     void setNewPos()
     {
         agent.isStopped = false;
+
+        if (points == null || points.Count == 0){
+            Debug.LogError("Lista points jest pusta!!!");
+            return;
+        }
+
         if(workTime>5)
         {
             workTime = 5;

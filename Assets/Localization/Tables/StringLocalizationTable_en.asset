@@ -101,6 +101,14 @@ MonoBehaviour:
     m_Localized: More stamina
     m_Metadata:
       m_Items: []
+  - m_Id: 91660619866112
+    m_Localized: You are fired!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 109468099534848
+    m_Localized: You won!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
