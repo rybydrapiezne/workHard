@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         {
             if (playerController.fired)
             {
-                SceneManager.LoadScene(3);
+                SceneManager.LoadScene(5);
             }
         }
         if (numberOfWorkers == firedWorkersCount)
