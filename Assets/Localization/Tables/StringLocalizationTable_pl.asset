@@ -115,6 +115,14 @@ MonoBehaviour:
     m_Localized: "Wygra\u0142e\u015B!"
     m_Metadata:
       m_Items: []
+  - m_Id: 673075455582208
+    m_Localized: "Powt\xF3rz poziom"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 673133710270464
+    m_Localized: "Powr\xF3t do menu"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

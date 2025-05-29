@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         {
             if (playerController.fired)
             {
+                EndSceneScript.sceneId = SceneManager.GetActiveScene().buildIndex;
                 SceneManager.LoadScene(5);
             }
         }

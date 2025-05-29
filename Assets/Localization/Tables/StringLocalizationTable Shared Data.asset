@@ -99,6 +99,14 @@ MonoBehaviour:
     m_Key: FinalText
     m_Metadata:
       m_Items: []
+  - m_Id: 673075455582208
+    m_Key: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 673133710270464
+    m_Key: BackToMenu
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
