@@ -13,8 +13,9 @@ public class Tutorial : MonoBehaviour
     [SerializeField] private GameObject TextBox6;
     [SerializeField] private GameObject textboxPanel;
     [SerializeField] private GameObject endPoint;
+    [SerializeField] private GameObject arrow;
 
-    private bool finishedTyping=false;
+    private bool finishedTyping = false;
     private bool finishedCoroutine=false;
     private int numberOfClicks;
     private TypeWriterEffect actTypeWriter;
@@ -46,11 +47,13 @@ public class Tutorial : MonoBehaviour
                     case 2:
                         TextBox2.SetActive(false);
                         TextBox3.SetActive(true);
+                        arrow.SetActive(true);
                         actTypeWriter = TextBox3.GetComponent<TypeWriterEffect>();
                         break;
                     case 3:
                         TextBox3.SetActive(false);
                         TextBox4.SetActive(true);
+                        arrow.SetActive(false);
                         actTypeWriter = TextBox4.GetComponent<TypeWriterEffect>();
                         break;
                     case 4:

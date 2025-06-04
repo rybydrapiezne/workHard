@@ -39,11 +39,22 @@ public class Menu : MonoBehaviour
     [SerializeField]
     Slider loadingBarFill;
     [SerializeField]
+    GameSaver gameSaver;
+    [SerializeField]
     float tweenTime = 0.1f;
 
     private void Start()
     {
         scaleAllButtons(5f);
+        gameSaver.LoadSettings(out string language, out float masterVolume, out float musicVolume, out float sfxVolume);
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale(language);
+        audioMixer.SetFloat("masterSound", Mathf.Log10(masterVolume) * 20);
+        audioMixer.SetFloat("musicSound", Mathf.Log10(musicVolume) * 20);
+        audioMixer.SetFloat("sfxSound", Mathf.Log10(sfxVolume) * 20);
+        masterSlider.value = masterVolume;
+        musicSlider.value = musicVolume;
+        sfxSlider.value = sfxVolume;
+
     }
 
     private void scaleAllButtons(float direction)
@@ -71,6 +82,7 @@ public class Menu : MonoBehaviour
     public void Continue()
     {
         audioSourceOnClick.Play();
+        StartCoroutine(LoadAsyncScene(gameSaver.LoadGame()));
 
     }
     public void ChangeLanguage(string localeIdentifier)
@@ -119,6 +131,7 @@ public class Menu : MonoBehaviour
     public void Apply()
     {
         SetAllVolumes();
+        gameSaver.SaveSettings(LocalizationSettings.SelectedLocale.Identifier.Code, masterSlider.value, musicSlider.value, sfxSlider.value);
         audioSourceOnClick.Play();
     }
     public void Back()

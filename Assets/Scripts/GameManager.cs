@@ -13,10 +13,13 @@ public class GameManager : MonoBehaviour
     TMP_Text firedWorkers;
     [SerializeField]
     int numberOfWorkers = 5;
-    int firedWorkersCount=0;  
+    [SerializeField]
+    GameSaver saveGame;
+    int firedWorkersCount=0;
     private void Start()
     {
         BossNav.onWorkerFired += updateUI;
+        saveGame.SaveGame();
     }
 
     private void updateUI(BossNav bossNav)
